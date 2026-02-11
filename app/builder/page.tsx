@@ -64,7 +64,7 @@ const BuilderPage = () => {
                 </div>
             </div>
 
-            <DopamineStats progress={85} atsScore={92} message="Your summary is powerful! ✨" />
+            {/* <DopamineStats progress={85} atsScore={92} message="Your summary is powerful! ✨" /> */}
         </div>
     );
 };
