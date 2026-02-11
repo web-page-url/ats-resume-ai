@@ -39,6 +39,28 @@ const Section = ({ title, icon: Icon, children, id }: any) => {
     );
 };
 
+const AutoResizeTextarea = ({ value, onChange, placeholder, className }: any) => {
+    const textareaRef = React.useRef<HTMLTextAreaElement>(null);
+
+    React.useEffect(() => {
+        if (textareaRef.current) {
+            textareaRef.current.style.height = "auto";
+            textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+        }
+    }, [value]);
+
+    return (
+        <textarea
+            ref={textareaRef}
+            value={value}
+            onChange={onChange}
+            placeholder={placeholder}
+            className={cn("w-full overflow-hidden resize-none", className)}
+            rows={1}
+        />
+    );
+};
+
 const Editor = () => {
     const {
         resumeData,
@@ -109,11 +131,10 @@ const Editor = () => {
                 </div>
                 <div className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-widest opacity-60">Summary</label>
-                    <textarea
-                        rows={3}
+                    <AutoResizeTextarea
                         value={resumeData.personalInfo.summary}
-                        onChange={(e) => updatePersonalInfo({ summary: e.target.value })}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2 outline-none focus:border-brand-primary transition-colors resize-none"
+                        onChange={(e: any) => updatePersonalInfo({ summary: e.target.value })}
+                        className="bg-white/5 border border-white/10 rounded-xl px-4 py-2 outline-none focus:border-brand-primary transition-colors"
                     />
                 </div>
             </Section>
@@ -154,13 +175,15 @@ const Editor = () => {
                                     className="bg-transparent border-b border-white/10 py-1 outline-none focus:border-brand-primary placeholder:opacity-30"
                                 />
                             </div>
-                            <textarea
-                                placeholder="Job Description (Use periods to separate bullet points)"
-                                rows={2}
-                                value={exp.description}
-                                onChange={(e) => updateExperience(exp.id, { description: e.target.value })}
-                                className="w-full bg-transparent border-b border-white/10 py-2 outline-none focus:border-brand-primary resize-none mt-2 placeholder:opacity-30"
-                            />
+                            <div className="mt-4 space-y-1">
+                                <label className="text-[10px] font-bold uppercase opacity-30 px-1">Job Details (One bullet per line)</label>
+                                <AutoResizeTextarea
+                                    placeholder="• Managed team of 5...&#10;• Scaled infrastructure..."
+                                    value={exp.description}
+                                    onChange={(e: any) => updateExperience(exp.id, { description: e.target.value })}
+                                    className="bg-transparent border-b border-white/10 py-1 outline-none focus:border-brand-primary placeholder:opacity-20"
+                                />
+                            </div>
                         </div>
                     ))}
                     <button
@@ -189,13 +212,15 @@ const Editor = () => {
                                 onChange={(e) => updateProject(proj.id, { name: e.target.value })}
                                 className="w-full bg-transparent border-b border-white/10 py-1 outline-none focus:border-brand-primary placeholder:opacity-30 font-bold"
                             />
-                            <textarea
-                                placeholder="Project Description"
-                                rows={1}
-                                value={proj.description}
-                                onChange={(e) => updateProject(proj.id, { description: e.target.value })}
-                                className="w-full bg-transparent border-b border-white/10 py-2 outline-none focus:border-brand-primary resize-none mt-2 placeholder:opacity-30"
-                            />
+                            <div className="mt-2 space-y-1">
+                                <label className="text-[10px] font-bold uppercase opacity-30 px-1">Project Details (One bullet per line)</label>
+                                <AutoResizeTextarea
+                                    placeholder="• Built XYZ using ABC..."
+                                    value={proj.description}
+                                    onChange={(e: any) => updateProject(proj.id, { description: e.target.value })}
+                                    className="bg-transparent border-b border-white/10 py-1 outline-none focus:border-brand-primary placeholder:opacity-20"
+                                />
+                            </div>
                         </div>
                     ))}
                     <button

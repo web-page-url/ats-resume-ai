@@ -58,55 +58,57 @@ interface ResumeStore {
 
 const initialData: ResumeData = {
     personalInfo: {
-        fullName: "AASHISH JAISWAL",
-        email: "aashish.beec15@gmail.com",
-        phone: "8050684023",
-        location: "Bangalore",
-        website: "linkedin.com/in/aashish-jaiswal",
-        summary: "Senior Data Analyst with 4+ years of experience in designing and maintaining interactive dashboards, writing optimized SQL queries, and building Python-based automated reporting pipelines across large datasets. Strong expertise in BI tools (Power BI, Tableau), time-series analysis, data validation, and dashboard performance optimization. Proven ability to collaborate with engineering, product, and business teams to deliver accurate, scalable, and actionable insights for decision-making.",
+        fullName: "Aashish Jaiswal",
+        email: "aashish@example.com",
+        phone: "+91 98765 43210",
+        location: "Noida, India",
+        website: "linkedin.com/in/aashish",
+        summary: "Data Science professional with expertise in deep learning and statistical modeling. Proven track record of delivering high-impact analytical solutions for fintech and e-commerce leaders."
     },
     experience: [
         {
             id: '1',
             company: "upGrad",
             role: "Senior Consultant",
-            location: "Noida",
-            date: "Sep 2024 - Jan 2025",
-            description: "Designed and maintained interactive dashboards to track sales funnels, conversions, and revenue trends using SQL and BI tools. Wrote optimized SQL queries for reporting, analysis, and data validation across high-volume datasets. Performed time-series analysis on lead inflow and conversion data to identify trends and historical performance patterns. Collaborated with Sales, Marketing, Product, and Finance teams to deliver accurate, actionable insights for leadership decisions. Ensured data accuracy, consistency, reconciliation, and reliability across automated reports and dashboards."
+            date: "SEP 2024 - JAN 2025",
+            location: "NOIDA",
+            description: "Designed and maintained interactive dashboards to track sales funnels, conversions, and revenue trends using SQL and BI tools.\nWrote optimized SQL queries for reporting, analysis, and data validation across high-volume datasets.\nPerformed time-series analysis on lead inflow and conversion data to identify trends and historical performance patterns.\nCollaborated with Sales, Marketing, Product, and Finance teams to deliver accurate, scalable, and actionable insights for leadership decisions.\nEnsured data accuracy, consistency, reconciliation, and reliability across automated reports and dashboards."
+        },
+        {
+            id: '2',
+            company: "FinTech Corp",
+            role: "Associate Analyst",
+            date: "JAN 2022 - AUG 2024",
+            location: "BANGALORE",
+            description: "Developed automated risk assessment models reducing manual processing time by 40%.\nStreamlined data extraction pipelines using Python and AWS Lambda."
         }
     ],
     education: [
         {
             id: '1',
-            school: "Acharya Institute of Technology",
-            degree: "B.E. - Electronics & Communication Engineering",
-            location: "Bangalore",
-            date: "2015 - 2019",
+            school: "Indian Institute of Technology",
+            degree: "B.Tech in Computer Science",
+            date: "2017 - 2021",
+            location: "Delhi",
             description: ""
         }
     ],
     skills: [
-        "Analytics: Time-Series Analysis, Trend Analysis, Seasonality, Anomaly Detection",
-        "Business: Stakeholder Management, Ad-hoc Analysis, KPI Reporting",
-        "BI Tools: Power BI, Tableau (Apache Superset equivalent)",
-        "Python: Pandas, NumPy, Automated Reporting, Data Pipelines",
-        "Data Engineering: ETL, Automation, Dashboard Performance Optimization",
-        "SQL: Optimized Queries, CTEs, Window Functions, Data Validation, RCA",
-        "Databases: MySQL, BigQuery, Relational Databases, DBMS Principles",
-        "Tools: Alteryx, VBA, Advanced Excel, Salesforce, LeadSquared"
+        "Analytics: Time-series analysis, Data validation, Dashboard optimization",
+        "Technical: SQL, Python, AWS, Tableau, Power BI",
+        "Leadership: Cross-functional collaboration, Strategic planning"
     ],
     projects: [
         {
             id: '1',
-            name: "Retention & Time-Series Analysis",
-            description: "Performed time-series trend and seasonality analysis on user engagement data, improving retention by 20%.",
-            date: ""
+            name: "Neural Stock Predictor",
+            description: "Implemented an LSTM-based recurrent neural network to predict stock price movements with 85% accuracy.\nIntegrated real-time data feeds from Yahoo Finance API using Kafka for low-latency processing.",
+            date: "2023"
         }
     ],
     certifications: [
-        { id: '1', name: "AI Dashboard using Power BI - Skill Nation" },
-        { id: '2', name: "SAP Ariba - Sourcing Consultant Certification" },
-        { id: '3', name: "Google Professional Data Analytics" }
+        { id: '1', name: "Google Data Analytics Professional Certificate" },
+        { id: '2', name: "AWS Certified Solutions Architect" }
     ]
 };
 

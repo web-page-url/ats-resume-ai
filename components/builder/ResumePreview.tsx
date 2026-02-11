@@ -5,6 +5,21 @@ import { useResumeStore, ResumeData } from "@/store/useResumeStore";
 import { cn } from "@/lib/utils";
 import { Mail, Phone, Linkedin, MapPin, Globe } from "lucide-react";
 
+// Helper component for bullet points
+const BulletList = ({ text, className = "text-[11px]" }: { text: string; className?: string }) => {
+    if (!text) return null;
+    return (
+        <ul className="list-none space-y-1.5">
+            {text.split('\n').filter(b => b.trim()).map((bullet, idx) => (
+                <li key={idx} className={cn("flex items-start gap-2 leading-normal text-left", className)}>
+                    <span className="mt-[0.55em] w-1 h-1 shrink-0 rounded-full bg-current opacity-60" />
+                    <span className="flex-1">{bullet.trim().endsWith('.') || bullet.trim().endsWith(';') ? bullet.trim() : bullet.trim() + '.'}</span>
+                </li>
+            ))}
+        </ul>
+    );
+};
+
 // 1. Gold Standard (The one from the user image)
 const GoldStandardTemplate = ({ data }: { data: ResumeData }) => (
     <div className="p-10 bg-white text-slate-900 h-full font-serif leading-snug">
@@ -42,14 +57,7 @@ const GoldStandardTemplate = ({ data }: { data: ResumeData }) => (
                                 <span className="text-[11px] font-bold text-slate-500 uppercase">{exp.date}, {exp.location}</span>
                             </div>
                             <p className="text-[12px] font-bold text-slate-700 mb-2">{exp.company}</p>
-                            <ul className="list-none space-y-1">
-                                {exp.description.split('. ').filter(b => b.trim()).map((bullet, idx) => (
-                                    <li key={idx} className="flex items-start gap-2 text-[11px] text-slate-700 leading-normal">
-                                        <span className="text-lg leading-[0] mt-1.5">•</span>
-                                        <span>{bullet.trim().endsWith('.') ? bullet.trim() : bullet.trim() + '.'}</span>
-                                    </li>
-                                ))}
-                            </ul>
+                            <BulletList text={exp.description} className="text-[11px] text-slate-700 text-justify" />
                         </div>
                     ))}
                 </div>
@@ -62,10 +70,7 @@ const GoldStandardTemplate = ({ data }: { data: ResumeData }) => (
                         {data.projects.map(proj => (
                             <div key={proj.id}>
                                 <h3 className="text-[12px] font-bold mb-1 underline">{proj.name}</h3>
-                                <div className="flex items-start gap-2 text-[11px] text-slate-700 leading-normal">
-                                    <span className="text-lg leading-[0] mt-1.5">•</span>
-                                    <span>{proj.description}</span>
-                                </div>
+                                <BulletList text={proj.description} className="text-[11px] text-slate-700 text-justify" />
                             </div>
                         ))}
                     </div>
@@ -141,11 +146,24 @@ const MinimalTemplate = ({ data }: { data: ResumeData }) => (
                                 <span>{exp.date}</span>
                             </div>
                             <p className="text-sm italic text-slate-600 mb-2">{exp.role}</p>
-                            <p className="text-sm text-slate-500">{exp.description}</p>
+                            <BulletList text={exp.description} className="text-sm text-slate-500" />
                         </div>
                     ))}
                 </div>
             </section>
+            {data.projects && data.projects.length > 0 && (
+                <section>
+                    <h2 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Projects</h2>
+                    <div className="space-y-4">
+                        {data.projects.map(proj => (
+                            <div key={proj.id}>
+                                <h3 className="text-sm font-bold mb-1">{proj.name}</h3>
+                                <BulletList text={proj.description} className="text-xs text-slate-500" />
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            )}
             <div className="grid grid-cols-2 gap-8 pt-4">
                 <section>
                     <h2 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Education</h2>
@@ -206,11 +224,24 @@ const ModernTemplate = ({ data }: { data: ResumeData }) => (
                                 <span className="text-slate-400 text-xs">{exp.date}</span>
                             </div>
                             <p className="text-xs font-bold text-sky-600 mb-2">{exp.company}</p>
-                            <p className="text-xs text-slate-500 leading-relaxed">{exp.description}</p>
+                            <BulletList text={exp.description} className="text-xs text-slate-500" />
                         </div>
                     ))}
                 </div>
             </section>
+            {data.projects && data.projects.length > 0 && (
+                <section>
+                    <h2 className="text-sm font-black uppercase tracking-widest border-b border-slate-100 pb-2 mb-6">Projects</h2>
+                    <div className="space-y-6">
+                        {data.projects.map(proj => (
+                            <div key={proj.id}>
+                                <h3 className="text-sm font-bold text-slate-800 mb-1">{proj.name}</h3>
+                                <BulletList text={proj.description} className="text-xs text-slate-500" />
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            )}
         </div>
     </div>
 );
@@ -236,7 +267,7 @@ const TechTemplate = ({ data }: { data: ResumeData }) => (
                             <span>{exp.company} // {exp.role}</span>
                             <span className="text-sky-400/50">{exp.date}</span>
                         </div>
-                        <p className="text-[10px] leading-relaxed opacity-60">_ {exp.description}</p>
+                        <BulletList text={exp.description} className="text-[10px] opacity-60 ml-2" />
                     </div>
                 ))}
             </section>
@@ -272,7 +303,7 @@ const WallStreetTemplate = ({ data }: { data: ResumeData }) => (
                             <span>{exp.role}</span>
                             <span>{exp.location}</span>
                         </div>
-                        <p className="text-[11px] leading-relaxed pl-4 relative before:content-['•'] before:absolute before:left-0">{exp.description}</p>
+                        <BulletList text={exp.description} className="text-[11px] leading-relaxed" />
                     </div>
                 ))}
             </section>
@@ -317,7 +348,7 @@ const CreativeTemplate = ({ data }: { data: ResumeData }) => (
                         <div key={exp.id} className="mb-8">
                             <h3 className="text-xl font-black text-brand-primary uppercase mb-1">{exp.role}</h3>
                             <p className="font-bold text-xs opacity-40 mb-3">@ {exp.company} // {exp.date}</p>
-                            <p className="text-sm leading-relaxed">{exp.description}</p>
+                            <BulletList text={exp.description} className="text-sm leading-relaxed" />
                         </div>
                     ))}
                 </section>
@@ -363,7 +394,7 @@ const ExecutiveTemplate = ({ data }: { data: ResumeData }) => (
                             <div className="col-span-3">
                                 <h3 className="text-lg font-bold uppercase tracking-tight mb-1">{exp.role}</h3>
                                 <p className="text-sm font-medium text-slate-500 mb-3">{exp.company}</p>
-                                <p className="text-xs leading-relaxed opacity-80">{exp.description}</p>
+                                <BulletList text={exp.description} className="text-xs leading-relaxed opacity-80" />
                             </div>
                         </div>
                     ))}
@@ -399,7 +430,7 @@ const CompactTemplate = ({ data }: { data: ResumeData }) => (
                             <span>{exp.company} // {exp.role}</span>
                             <span>{exp.date}</span>
                         </div>
-                        <p className="opacity-70 mt-1">{exp.description}</p>
+                        <BulletList text={exp.description} className="opacity-70 mt-1" />
                     </div>
                 ))}
             </section>
@@ -434,7 +465,7 @@ const ChronoTemplate = ({ data }: { data: ResumeData }) => (
                             <span className="text-sm font-bold italic">{exp.date}</span>
                         </div>
                         <p className="text-sm font-bold uppercase mb-2 tracking-tighter text-slate-600">{exp.role}</p>
-                        <p className="text-sm leading-relaxed">{exp.description}</p>
+                        <BulletList text={exp.description} className="text-sm leading-relaxed" />
                     </div>
                 ))}
             </section>
@@ -468,7 +499,7 @@ const IndigoTemplate = ({ data }: { data: ResumeData }) => (
                                     <span>{exp.company}</span>
                                     <span>{exp.date}</span>
                                 </div>
-                                <p className="text-sm text-slate-500 leading-relaxed">{exp.description}</p>
+                                <BulletList text={exp.description} className="text-sm text-slate-500 leading-relaxed" />
                             </div>
                         ))}
                     </div>
@@ -513,7 +544,7 @@ const StartupTemplate = ({ data }: { data: ResumeData }) => (
                                 <span className="text-xs font-black text-zinc-300">{exp.date}</span>
                             </div>
                             <p className="font-bold text-zinc-500 mb-4 uppercase text-xs tracking-widest">@ {exp.company}</p>
-                            <p className="text-zinc-600 leading-relaxed">{exp.description}</p>
+                            <BulletList text={exp.description} className="text-zinc-600 leading-relaxed" />
                         </div>
                     ))}
                 </div>
@@ -538,7 +569,9 @@ const ElegantTemplate = ({ data }: { data: ResumeData }) => (
                         <div key={exp.id} className="text-center">
                             <h3 className="text-xl font-bold uppercase tracking-widest mb-1">{exp.role}</h3>
                             <p className="text-xs font-bold text-slate-400 uppercase tracking-tighter italic mb-4">{exp.company} // {exp.date}</p>
-                            <p className="text-sm leading-relaxed text-slate-500 max-w-lg mx-auto italic">{exp.description}</p>
+                            <div className="text-slate-500 max-w-lg mx-auto italic">
+                                <BulletList text={exp.description} className="text-sm" />
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -562,7 +595,7 @@ const TokyoTemplate = ({ data }: { data: ResumeData }) => (
                             <div key={exp.id} className="space-y-1">
                                 <p className="font-black">{exp.role}</p>
                                 <p className="opacity-40">{exp.company} / {exp.date}</p>
-                                <p className="pt-2">{exp.description}</p>
+                                <BulletList text={exp.description} className="pt-2 text-[11px]" />
                             </div>
                         ))}
                     </section>
