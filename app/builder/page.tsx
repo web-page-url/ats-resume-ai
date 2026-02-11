@@ -24,7 +24,7 @@ const BuilderPage = () => {
                 <header className="flex flex-col md:flex-row justify-between items-center mb-8 gap-6">
                     <div className="space-y-1">
                         <h1 className="text-3xl font-black tracking-tight">
-                            Resume <span className="text-gradient-brand">Builder</span>
+                            ATS Resume <span className="text-gradient-brand">AI</span> Builder
                         </h1>
                         <p className="text-text-secondary text-sm font-medium">
                             Every edit is a step closer to your dream job. ✨

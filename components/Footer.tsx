@@ -8,10 +8,16 @@ const Footer = () => {
         <footer className="py-20 px-4 bg-white dark:bg-black/40 border-t border-white/5">
             <div className="max-w-7xl mx-auto flex flex-col items-center gap-12">
                 <div className="flex flex-col items-center gap-4 text-center">
-                    <div className="flex items-center gap-2">
-                        <Sparkles className="w-5 h-5 text-brand-primary" />
+                    <div className="flex items-center gap-3">
+                        <div className="relative w-8 h-8 rounded-lg overflow-hidden border border-white/10 shadow-soft">
+                            <img
+                                src="/icon.png"
+                                alt="ATS Resume AI"
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
                         <span className="text-xl font-bold tracking-tight">
-                            Resume<span className="text-gradient-brand">Craft</span>
+                            ATS Resume <span className="text-gradient-brand">AI</span>
                         </span>
                     </div>
                     <p className="text-text-secondary dark:text-gray-400 max-w-md text-sm italic">

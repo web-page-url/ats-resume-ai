@@ -46,7 +46,7 @@ const Hero = () => {
                             </motion.button>
                         </Link>
 
-                        <Link href="/builder">
+                        <a href="#templates">
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
@@ -54,7 +54,7 @@ const Hero = () => {
                             >
                                 View Templates
                             </motion.button>
-                        </Link>
+                        </a>
                     </div>
 
 

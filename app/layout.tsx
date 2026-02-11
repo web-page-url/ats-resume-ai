@@ -14,8 +14,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ResumeCraft | ATS-Friendly AI Resume Builder",
+  title: "ATS Resume AI | AI-Powered Resume Builder",
   description: "Create a resume that gets you hired. ATS-friendly, recruiter-approved, and designed to make you feel confident.",
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({

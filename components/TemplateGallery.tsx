@@ -1,53 +1,94 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, Trophy, Briefcase, GraduationCap, Cpu, CheckCircle } from "lucide-react";
+import { Sparkles, Trophy, Briefcase, GraduationCap, Cpu, CheckCircle, Smartphone, Rocket, Palette, ScrollText, Globe, Star, Zap } from "lucide-react";
+import { useResumeStore } from "@/store/useResumeStore";
 import { cn } from "@/lib/utils";
 
 const templates = [
     {
-        id: 1,
+        id: "gold",
+        name: "Gold Standard",
+        type: "Professional",
+        color: "from-amber-500/20 to-orange-500/20",
+        icon: <Trophy className="w-6 h-6" />,
+        description: "The classic executive look. Perfection in every line.",
+    },
+    {
+        id: "tech",
         name: "Silicon Valley",
         type: "Tech",
         color: "from-blue-500/20 to-cyan-500/20",
         icon: <Cpu className="w-6 h-6" />,
-        description: "Perfect for software engineers and data scientists.",
+        description: "Modern tech aesthetic. Optimized for high-growth engineers.",
     },
     {
-        id: 2,
+        id: "professional",
         name: "Wall Street",
         type: "Professional",
-        color: "from-indigo-500/20 to-purple-500/20",
+        color: "from-slate-500/20 to-zinc-500/20",
         icon: <Briefcase className="w-6 h-6" />,
-        description: "High-impact design for finance and management roles.",
+        description: "High-impact design for finance and leadership roles.",
     },
     {
-        id: 3,
-        name: "Ivy League",
-        type: "Academic",
-        color: "from-emerald-500/20 to-teal-500/20",
-        icon: <GraduationCap className="w-6 h-6" />,
-        description: "Clean and structured layout for researchers and students.",
-    },
-    {
-        id: 4,
-        name: "Rising Star",
+        id: "chrono",
+        name: "The Chrono",
         type: "Fresher",
-        color: "from-orange-500/20 to-yellow-500/20",
-        icon: <Sparkles className="w-6 h-6" />,
-        description: "Highlights potential and core skills for new graduates.",
+        color: "from-purple-500/20 to-pink-500/20",
+        icon: <ScrollText className="w-6 h-6" />,
+        description: "Strong focus on career progression and timeline.",
     },
+    {
+        id: "startup",
+        name: "Startup Ready",
+        type: "Tech",
+        color: "from-emerald-500/20 to-green-500/20",
+        icon: <Rocket className="w-6 h-6" />,
+        description: "Fast-paced, high-energy layout for innovators.",
+    },
+    {
+        id: "creative",
+        name: "Creative Portfolio",
+        type: "Creative",
+        color: "from-rose-500/20 to-orange-500/20",
+        icon: <Palette className="w-6 h-6" />,
+        description: "Break the mold with this visually striking layout.",
+    },
+    {
+        id: "tokyo",
+        name: "Tokyo Clean",
+        type: "Professional",
+        color: "from-indigo-500/20 to-blue-500/20",
+        icon: <Globe className="w-6 h-6" />,
+        description: "Ultra-minimalist and perfectly balanced design.",
+    },
+    {
+        id: "elegant",
+        name: "Elegant Gold",
+        type: "Executive",
+        color: "from-yellow-500/20 to-amber-600/20",
+        icon: <Star className="w-6 h-6" />,
+        description: "Sophisticated and luxurious centered layout.",
+    }
 ];
 
-const categories = ["All", "Tech", "Professional", "Academic", "Fresher"];
+const categories = ["All", "Tech", "Professional", "Executive", "Fresher", "Creative"];
 
 const TemplateGallery = () => {
     const [filter, setFilter] = useState("All");
+    const router = useRouter();
+    const setTemplate = useResumeStore((state) => state.setTemplate);
 
     const filteredTemplates = filter === "All"
         ? templates
         : templates.filter(t => t.type === filter);
+
+    const handleSelectTemplate = (id: string) => {
+        setTemplate(id);
+        router.push("/builder");
+    };
 
     return (
         <section id="templates" className="py-24 px-4 bg-white dark:bg-black/20">
@@ -59,9 +100,9 @@ const TemplateGallery = () => {
                         viewport={{ once: true }}
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass dark:glass-dark border border-brand-accent/20"
                     >
-                        <Trophy className="w-4 h-4 text-brand-accent" />
+                        <Zap className="w-4 h-4 text-brand-accent" />
                         <span className="text-xs font-bold uppercase tracking-widest text-brand-accent">
-                            World-Class Templates
+                            Recruiter-Approved Designs
                         </span>
                     </motion.div>
                     <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
@@ -107,12 +148,12 @@ const TemplateGallery = () => {
                             >
                                 <div className={cn(
                                     "absolute inset-0 rounded-[32px] bg-gradient-to-br blur-xl opacity-0 group-hover:opacity-40 transition-opacity duration-500",
-                                    template.color.replace('from-', 'from-').replace('to-', 'to-')
+                                    template.color
                                 )}></div>
 
                                 <div className="relative glass dark:glass-dark rounded-[32px] p-6 border border-white/10 shadow-soft h-full flex flex-col gap-6 overflow-hidden">
                                     <div className={cn(
-                                        "w-12 h-12 rounded-2xl flex items-center justify-center bg-gradient-to-br transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110",
+                                        "w-12 h-12 rounded-2xl flex items-center justify-center bg-gradient-to-br transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110 shadow-inner",
                                         template.color
                                     )}>
                                         {React.cloneElement(template.icon as React.ReactElement<any>, { className: "w-6 h-6 text-brand-primary" })}
@@ -120,37 +161,55 @@ const TemplateGallery = () => {
 
 
                                     <div className="space-y-2">
-                                        <div className="flex justify-between items-center">
-                                            <h3 className="text-xl font-bold">{template.name}</h3>
+                                        <div className="flex justify-between items-start gap-2">
+                                            <h3 className="text-lg font-bold leading-tight">{template.name}</h3>
                                             <motion.div
-                                                animate={{ scale: [1, 1.2, 1] }}
+                                                animate={{ opacity: [0.5, 1, 0.5] }}
                                                 transition={{ repeat: Infinity, duration: 2 }}
-                                                className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-success/20 text-[10px] font-black uppercase text-success border border-success/30"
+                                                className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-success/10 text-[9px] font-black uppercase text-success border border-success/20 shrink-0"
                                             >
                                                 <CheckCircle className="w-2 h-2" />
                                                 ATS Perfect
                                             </motion.div>
                                         </div>
-                                        <p className="text-sm text-text-secondary dark:text-gray-400 line-clamp-2">
+                                        <p className="text-xs text-text-secondary dark:text-gray-400 line-clamp-2">
                                             {template.description}
                                         </p>
                                     </div>
 
-                                    {/* Mock Shell */}
-                                    <div className="flex-1 w-full bg-white/50 dark:bg-black/50 rounded-2xl p-4 space-y-3 border border-white/5">
-                                        <div className="h-2 w-3/4 bg-gray-100 dark:bg-zinc-800 rounded"></div>
-                                        <div className="h-1.5 w-full bg-gray-50 dark:bg-zinc-800/50 rounded"></div>
-                                        <div className="h-1.5 w-5/6 bg-gray-50 dark:bg-zinc-800/50 rounded"></div>
-                                        <div className="pt-2 grid grid-cols-2 gap-2">
-                                            <div className="h-8 bg-gray-100 dark:bg-zinc-800 rounded-lg"></div>
-                                            <div className="h-8 bg-gray-100 dark:bg-zinc-800 rounded-lg"></div>
+                                    {/* Mock Shell - Visual Preview */}
+                                    <div className="flex-1 w-full bg-white/40 dark:bg-black/40 rounded-2xl p-4 space-y-3 border border-white/5 shadow-inner">
+                                        {/* Header */}
+                                        <div className="flex justify-between items-center mb-4">
+                                            <div className="h-2 w-1/2 bg-brand-primary/30 rounded"></div>
+                                            <div className="h-4 w-4 bg-brand-primary/20 rounded-full"></div>
+                                        </div>
+                                        {/* Experience blocks */}
+                                        <div className="space-y-4">
+                                            <div className="space-y-1.5">
+                                                <div className="h-1.5 w-1/3 bg-text-primary/10 dark:bg-white/10 rounded"></div>
+                                                <div className="h-1 w-full bg-text-secondary/5 dark:bg-white/5 rounded"></div>
+                                                <div className="h-1 w-full bg-text-secondary/5 dark:bg-white/5 rounded"></div>
+                                            </div>
+                                            <div className="space-y-1.5 opacity-50">
+                                                <div className="h-1.5 w-1/4 bg-text-primary/10 dark:bg-white/10 rounded"></div>
+                                                <div className="h-1 w-full bg-text-secondary/5 dark:bg-white/5 rounded"></div>
+                                                <div className="h-1 w-5/6 bg-text-secondary/5 dark:bg-white/5 rounded"></div>
+                                            </div>
+                                        </div>
+                                        {/* Buttons/Stats area */}
+                                        <div className="pt-2 grid grid-cols-3 gap-2">
+                                            <div className="h-1.5 bg-success/20 rounded-full"></div>
+                                            <div className="h-1.5 bg-brand-primary/20 rounded-full"></div>
+                                            <div className="h-1.5 bg-brand-accent/20 rounded-full"></div>
                                         </div>
                                     </div>
 
                                     <motion.button
-                                        whileHover={{ scale: 1.02 }}
-                                        whileTap={{ scale: 0.98 }}
-                                        className="w-full py-3 rounded-xl bg-text-primary dark:bg-white dark:text-black font-bold text-sm shadow-soft group-hover:bg-gradient-brand transition-colors duration-500 group-hover:text-white"
+                                        whileHover={{ scale: 1.05 }}
+                                        whileTap={{ scale: 0.95 }}
+                                        onClick={() => handleSelectTemplate(template.id)}
+                                        className="w-full py-3 rounded-xl bg-text-primary dark:bg-white dark:text-black font-bold text-sm shadow-soft group-hover:bg-gradient-brand transition-all duration-500 group-hover:text-white"
                                     >
                                         Use This Template
                                     </motion.button>

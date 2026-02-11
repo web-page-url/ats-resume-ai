@@ -18,12 +18,16 @@ const Navbar = () => {
                 <Link href="/" className="flex items-center gap-2 group">
                     <div className="relative">
                         <div className="absolute -inset-1 bg-gradient-brand rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-                        <div className="relative flex items-center justify-center p-2 rounded-lg bg-white dark:bg-black border border-white/20">
-                            <Sparkles className="w-6 h-6 text-brand-primary" />
+                        <div className="relative flex items-center justify-center rounded-lg bg-white dark:bg-black border border-white/20 overflow-hidden w-10 h-10">
+                            <img
+                                src="/icon.png"
+                                alt="ATS Resume AI"
+                                className="w-full h-full object-cover"
+                            />
                         </div>
                     </div>
                     <span className="text-xl font-bold tracking-tight text-text-primary dark:text-text-invert">
-                        Resume<span className="text-gradient-brand">Craft</span>
+                        ATS Resume <span className="text-gradient-brand">AI</span>
                     </span>
                 </Link>
 
