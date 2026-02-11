@@ -1,0 +1,300 @@
+🌈🧠 DOPAMINE-TRIGGERING, COLORFUL PREMIUM UI
+MASTER PROMPT — ATS RESUME BUILDER WEBSITE
+🎯 PRODUCT SOUL
+
+Create a visually rich, colorful, dopamine-triggering Resume Builder website that users fall in love with.
+
+The site must feel:
+
+🎉 Joyful but professional
+
+💎 Premium, not cheap
+
+🧠 Smart, calming, confidence-boosting
+
+🚀 Like a career upgrade experience
+
+Every click should reward the brain.
+
+🎨 COLOR PHILOSOPHY (CRITICAL)
+
+This is NOT flat SaaS grey.
+
+Primary Gradient System
+
+Electric Blue → Royal Purple
+
+Magenta Pink → Sunset Orange
+
+Cyan → Emerald Green
+
+Use:
+
+Soft gradients, not harsh blocks
+
+Glow accents, not neon overload
+
+Color = feedback, reward, progress
+
+Backgrounds
+
+Light mode: soft off-white with gradient washes
+
+Dark mode: deep navy with colorful glow orbs
+
+🧬 DOPAMINE UI RULES (APPLY EVERYWHERE)
+
+Every completed action = visual reward
+
+Progress is always visible
+
+Colors shift when things improve
+
+Micro-animations under 200ms
+
+Smooth easing, no jerks
+
+Confetti only for big wins
+
+🧭 NAVBAR (COLORFUL PREMIUM)
+Design
+
+Glassmorphism navbar
+
+Subtle gradient bottom border
+
+Floating feel
+
+Left
+
+Logo: ResumeCraft
+Logo icon uses animated gradient stroke
+
+Center
+
+Templates
+
+Builder
+
+ATS Score
+
+Pricing
+
+Right
+
+Primary CTA:
+✨ Build My Resume
+
+CTA has:
+
+Gradient background
+
+Glow on hover
+
+Ripple on click
+
+🌈 HERO SECTION (DOPAMINE BLAST)
+Headline (Big, Animated)
+
+Create a Resume
+That Gets You Hired
+
+Each line reveals with gradient text animation.
+
+Sub-headline
+
+ATS-friendly. Recruiter-approved.
+Designed to make you feel confident.
+
+CTA
+
+Start Free
+
+View Templates
+
+Visual
+
+Live resume preview
+
+Floating colorful shapes
+
+Gentle motion parallax
+
+Sparkle accents on hover
+
+🧠 EMOTIONAL SAFETY SECTION
+Card UI
+
+Gradient border + soft glow
+
+Copy:
+
+“You don’t need design skills.
+We’ve already done the hard part.”
+
+Progress starts at 5% automatically (dopamine hit).
+
+🎨 TEMPLATE GALLERY (COLORFUL & FUN)
+Layout
+
+Color-tinted cards
+
+Rounded edges
+
+Floating depth
+
+Filters
+
+Fresher
+
+Professional
+
+Tech
+
+Academic
+
+Card Behavior
+
+Hover → card lifts + glow
+
+ATS badge pulses gently
+
+Click → smooth zoom-in
+
+✍️ RESUME BUILDER (GAME-LIKE)
+Left Panel (Editor)
+
+Each section has a unique accent color
+
+Friendly micro-copy
+
+Auto-suggestions appear smoothly
+
+When section completed:
+
+Checkmark pops
+
+Card glows
+
+Progress jumps
+
+Right Panel (Preview)
+
+Smooth page transitions
+
+Color highlights for edited sections
+
+Mini celebration on page completion
+
+📊 PROGRESS SYSTEM (ADDICTIVE LOOP)
+Floating Progress Bar
+
+Gradient fill
+
+Percentage counter
+
+Encouraging text:
+
+“This is looking amazing ✨”
+
+Milestones
+
+First Section Completed 🎯
+
+ATS Optimized 🧠
+
+Ready to Download 🚀
+
+Each milestone = small animation + color burst.
+
+🤖 ATS SCORE (LEVEL UP FEEL)
+UI
+
+Circular gradient meter
+
+Animated number count
+
+Glow increases with score
+
+Copy:
+
+“Your resume is stronger than 79% of others.”
+
+Feels like leveling up in a game.
+
+📥 DOWNLOAD EXPERIENCE (BIG DOPAMINE HIT)
+Title
+
+Your Resume Is Ready 🎉
+
+Animation
+
+Resume card locks in
+
+Gradient glow spreads
+
+Soft confetti
+
+Success tick
+
+CTA
+
+Download PDF
+
+Sub-copy:
+
+“You should be proud of this.”
+
+💎 PRICING (DESIRABLE, COLORFUL)
+
+Gradient bordered cards
+
+Pro plan highlighted with glow
+
+Toggle animation between Monthly / Yearly
+
+Copy:
+
+“Upgrade when you’re ready.”
+
+🌟 SOCIAL PROOF (VALIDATION)
+
+Colorful avatar rings
+
+Star ratings
+
+Animated counters
+
+Company logos in soft color
+
+🧘 FOOTER (CALM LANDING)
+
+Soft gradient background
+
+Minimal links
+
+Friendly closing line:
+
+“Careers are built step by step.
+You just took a powerful one.”
+
+🧪 PERFORMANCE & QUALITY
+
+Ultra-fast
+
+Smooth transitions
+
+Perfect mobile experience
+
+SEO optimized
+
+Accessibility friendly
+
+🧠 FINAL USER EMOTION
+
+The user should feel:
+
+“This was fun.”
+“This feels premium.”
+“I trust this.”
+“I want to share this.”

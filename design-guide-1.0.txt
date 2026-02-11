@@ -1,0 +1,246 @@
+🎨 EXACT COLOR TOKENS (TAILWIND-READY, PREMIUM + COLORFUL)
+
+These colors are dopamine-safe: vibrant, emotional, but not childish.
+
+🌈 BRAND GRADIENT SYSTEM (CORE IDENTITY)
+Primary Gradient (Confidence + Trust)
+bg-gradient-to-r from-[#4F46E5] via-[#7C3AED] to-[#EC4899]
+
+
+Used for:
+
+Primary CTA
+
+Progress bars
+
+Highlights
+
+Key headings
+
+Secondary Gradient (Joy + Momentum)
+bg-gradient-to-r from-[#06B6D4] via-[#22C55E] to-[#A3E635]
+
+
+Used for:
+
+Success states
+
+Completion animations
+
+ATS score improvements
+
+Accent Gradient (Reward / Celebration)
+bg-gradient-to-r from-[#F97316] via-[#F59E0B] to-[#FACC15]
+
+
+Used for:
+
+Download success
+
+Milestones
+
+Confetti glow
+
+🎨 BASE COLOR PALETTE
+Backgrounds
+--bg-light: #F9FAFB;
+--bg-dark: #0B1020;
+--bg-glass: rgba(255, 255, 255, 0.12);
+
+Text
+--text-primary: #0F172A;     /* Deep slate */
+--text-secondary: #475569;   /* Muted */
+--text-invert: #F8FAFC;      /* Light mode on dark */
+
+Borders & UI
+--border-soft: #E2E8F0;
+--border-glow: rgba(124, 58, 237, 0.6);
+
+✨ STATUS COLORS (DOPAMINE-AWARE)
+Success (Green but premium)
+--success: #22C55E;
+
+Warning (Encouraging, not scary)
+--warning: #F59E0B;
+
+Error (Soft, non-punishing)
+--error: #FB7185;
+
+
+⚠️ Never use harsh red. Errors must feel fixable, not shaming.
+
+💎 SHADOWS & GLOWS
+shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
+shadow-glow-purple: 0 0 30px rgba(124, 58, 237, 0.45);
+shadow-glow-cyan: 0 0 30px rgba(6, 182, 212, 0.4);
+
+🧠 DOPAMINE PSYCHOLOGY MAP (THIS IS THE SECRET SAUCE)
+
+This is why users love the product, not just use it.
+
+1️⃣ ANTICIPATION DOPAMINE (Before Action)
+Where
+
+Hero section
+
+CTA buttons
+
+Template previews
+
+How
+
+Animated gradient text
+
+Slight hover motion
+
+“Start Free” with glow
+
+🧠 Brain says:
+
+“Something good is about to happen.”
+
+2️⃣ PROGRESS DOPAMINE (During Action)
+Where
+
+Resume builder
+
+Form completion
+
+Progress bar
+
+How
+
+Progress bar always visible
+
+% jumps immediately after action
+
+Colors fill smoothly
+
+🧠 Brain says:
+
+“I’m moving forward.”
+
+3️⃣ MICRO-REWARD DOPAMINE (Tiny Wins)
+Where
+
+Completing a section
+
+Adding experience
+
+Fixing ATS issues
+
+How
+
+Checkmark animation
+
+Soft glow
+
+Small copy:
+
+“Nice work ✨”
+
+🧠 Brain says:
+
+“That felt good. Do more.”
+
+4️⃣ VALIDATION DOPAMINE (Confidence Boost)
+Where
+
+ATS score section
+
+Resume preview
+
+Milestones
+
+How
+
+Animated score count-up
+
+Copy like:
+
+“Stronger than 82% of resumes”
+
+🧠 Brain says:
+
+“I’m doing better than others.”
+
+5️⃣ COMPLETION DOPAMINE (Big Reward)
+Where
+
+Download screen
+
+How
+
+Glow burst
+
+Confetti (subtle)
+
+Celebration message
+
+🧠 Brain says:
+
+“I finished something important.”
+
+6️⃣ SAFETY DOPAMINE (Stress Reduction)
+Where
+
+Errors
+
+Empty states
+
+Incomplete sections
+
+How
+
+Friendly language
+
+No red alerts
+
+Suggestions instead of warnings
+
+🧠 Brain says:
+
+“I’m safe here.”
+
+🔁 DOPAMINE LOOP (WHY USERS STAY)
+Anticipation → Action → Micro-Reward → Progress → Validation → Completion
+                         ↑______________________________________________|
+
+
+This loop should repeat every 20–40 seconds.
+
+🧠 COPY RULES (EXTREMELY IMPORTANT)
+
+❌ Don’t say:
+
+“Error”
+
+“Invalid”
+
+“Missing”
+
+✅ Say:
+
+“Let’s improve this”
+
+“Almost there”
+
+“One small tweak”
+
+Words directly affect dopamine release.
+
+🎯 FINAL RESULT
+
+If done correctly:
+
+Users feel calm
+
+They feel progress
+
+They feel proud
+
+They finish the resume
+
+They recommend the product
+
+This is how Duolingo-level engagement meets enterprise-level professionalism.
