@@ -1,12 +1,36 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+const NAV_LINKS = [
+    { name: "Templates", href: "/templates" },
+    { name: "Builder", href: "/builder" },
+    { name: "ATS Score", href: "/ats-score" },
+    { name: "Pricing", href: "/pricing" }
+];
+
 const Navbar = () => {
+    const [mounted, setMounted] = useState(false);
+
+    // Ensure component is mounted to avoid hydration mismatch
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) {
+        return (
+            <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4">
+                <div className="glass dark:glass-dark flex items-center justify-between w-full max-w-6xl px-6 py-3 rounded-2xl border-b border-white/20 shadow-soft invisible">
+                    {/* Placeholder to maintain layout during hydration */}
+                    <div className="w-10 h-10" />
+                </div>
+            </nav>
+        );
+    }
+
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4">
             <motion.div
@@ -33,13 +57,13 @@ const Navbar = () => {
 
                 {/* Center: Links */}
                 <div className="hidden md:flex items-center gap-8">
-                    {["Templates", "Builder", "ATS Score", "Pricing"].map((item) => (
+                    {NAV_LINKS.map((item) => (
                         <Link
-                            key={item}
-                            href="/builder"
+                            key={item.name}
+                            href={item.href}
                             className="text-sm font-medium text-text-secondary hover:text-text-primary dark:text-gray-400 dark:hover:text-white transition-colors"
                         >
-                            {item}
+                            {item.name}
                         </Link>
                     ))}
                 </div>

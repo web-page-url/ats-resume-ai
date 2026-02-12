@@ -2,7 +2,6 @@ import Hero from "@/components/Hero";
 import SafetySection from "@/components/SafetySection";
 import TemplateGallery from "@/components/TemplateGallery";
 import Features from "@/components/Features";
-import Footer from "@/components/Footer";
 import DopamineStats from "@/components/DopamineStats";
 
 export default function Home() {
@@ -13,17 +12,17 @@ export default function Home() {
       <SafetySection />
       <TemplateGallery />
 
-      {/* 
-        This is a preview of the Dopamine Progress System 
+      {/*
+        This is a preview of the Dopamine Progress System
         that will be active during the resume building process.
       */}
-      <DopamineStats
+      {/* <DopamineStats
         progress={65}
         atsScore={79}
         message="Your background matches our Tech template perfectly! ✨"
-      />
+      /> */}
 
-      <Footer />
+
     </div>
   );
 }

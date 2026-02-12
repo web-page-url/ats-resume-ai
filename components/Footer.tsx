@@ -25,15 +25,18 @@ const Footer = () => {
                     </p>
                 </div>
 
-                <div className="flex flex-wrap justify-center gap-x-12 gap-y-6 text-sm font-medium text-text-secondary">
-                    <a href="#" className="hover:text-brand-primary transition-colors">Twitter</a>
-                    <a href="#" className="hover:text-brand-primary transition-colors">LinkedIn</a>
-                    <a href="#" className="hover:text-brand-primary transition-colors">Privacy Policy</a>
-                    <a href="#" className="hover:text-brand-primary transition-colors">Terms of Service</a>
-                </div>
-
-                <div className="flex items-center gap-1.5 text-xs text-text-secondary opacity-60">
-                    Created with <Heart className="w-3 h-3 text-brand-accent fill-brand-accent" /> for the next generation of talent.
+                <div className="flex items-center gap-2 text-sm font-medium text-text-secondary">
+                    Created with
+                    <Heart className="w-4 h-4 text-brand-accent fill-brand-accent animate-pulse" />
+                    by
+                    <a
+                        href="https://www.linkedin.com/in/anubhav-chaudhary-4bba7918b/?"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-text-primary dark:text-white hover:text-brand-primary transition-colors border-b border-white/10 hover:border-brand-primary"
+                    >
+                        Anubhav
+                    </a>
                 </div>
             </div>
         </footer>
