@@ -48,12 +48,15 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: '/manifest.json',
-  themeColor: '#8b5cf6',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
     title: 'ATS Resume AI',
   },
+};
+
+export const viewport = {
+  themeColor: '#8b5cf6',
 };
 
 export default function RootLayout({
